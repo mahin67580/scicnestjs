@@ -25,12 +25,15 @@ export default function Navbar() {
     { name: "Home", href: "/" },
     { name: "Products", href: "/products" },
     ...(session 
-      ? [{ 
+      ? [
+        { name: "Add Product", href: "/dashboard/add-product" },
+        { 
           name: "Logout", 
           href: "#", 
           onClick: handleLogout,
           loading: isLoggingOut
-        }] 
+        }
+      ] 
       : [{ name: "Login", href: "/login" }]
     ),
   ];
