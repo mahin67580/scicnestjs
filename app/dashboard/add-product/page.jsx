@@ -4,6 +4,7 @@ import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import Navbar from "../../components/Navbar";
+import toast from "react-hot-toast";
 
 export default function AddProduct() {
     const { data: session, status } = useSession();
@@ -63,10 +64,11 @@ export default function AddProduct() {
                 const err = await res.json();
                 throw new Error(err.message || "Failed to add product");
             }
-
+            toast.success("✅ Product added successfully!");
             setSuccessMessage("✅ Product added successfully!");
             setForm({ name: "", description: "", price: "", image: null });
         } catch (err) {
+            toast.error(`❌ ${err.message}`);
             setErrorMessage(`❌ ${err.message}`);
         } finally {
             setLoading(false);
@@ -82,7 +84,7 @@ export default function AddProduct() {
 
                 <form
                     onSubmit={handleSubmit}
-                    className="bg-white p-6 rounded-lg shadow-md max-w-xl mx-auto"
+                    className="bg-white p-6 rounded-lg shadow-md   mx-auto"
                 >
                     <div className="mb-4">
                         <label htmlFor="name" className="block text-black font-semibold mb-1">
