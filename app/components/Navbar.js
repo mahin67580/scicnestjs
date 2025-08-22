@@ -96,7 +96,7 @@ export default function Navbar() {
           />
           
         )}
-         <span className="text-sm">{session.user.name}</span>
+         {/* <span className="text-sm">{session.user.name}</span> */}
       </div>
 
       {/* Mobile Nav */}
