@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "name": "Wireless Headphones",
+    "description": "High-quality sound with noise cancellation.",
+    "price": "$99"
+  },
+  {
+    "id": 2,
+    "name": "Smart Watch",
+    "description": "Track your fitness and notifications.",
+    "price": "$149"
+  },
+  {
+    "id": 3,
+    "name": "Gaming Keyboard",
+    "description": "RGB mechanical keyboard for gamers.",
+    "price": "$79"
+  }
+]
