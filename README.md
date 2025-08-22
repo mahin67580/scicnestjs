@@ -1,37 +1,96 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🛒 QuickCart
 
-## Getting Started
+A modern e-commerce web application built with **Next.js 13+ (App Router)**, **MongoDB**, **Cloudinary**, and **NextAuth**. It allows users to authenticate (via Google or credentials), browse products, and add new products with image uploads.
 
-First, run the development server:
+---
+
+## 🚀 Project Description
+
+QuickCart is a lightweight e-commerce platform where users can:
+
+- Log in with Google 
+- View available products
+- Add new products with image uploads (Cloudinary)
+- Access protected routes for authenticated users only
+
+Tech stack includes:
+
+- **Next.js 13+ (App Router)**
+- **NextAuth.js**
+- **MongoDB (via Mongoose)**
+- **Cloudinary** (for product images)
+- **Tailwind CSS** (UI styling)
+- **React Hot Toast** (notifications)
+
+---
+
+## 🛠️ Setup & Installation
+
+### 1. Clone the repository
 
 ```bash
+git clone https://github.com/your-username/quickcart.git
+cd quickcart
+
+
+
+npm install
+# or
+yarn install
+
+
+
+GOOGLE_CLIENT_ID=your_google_client_id
+GOOGLE_CLIENT_SECRET=your_google_client_secret
+NEXTAUTH_SECRET=your_nextauth_secret
+NEXTAUTH_URL=http://localhost:3000
+
+MONGODB_URI=your_mongodb_connection_uri
+
+CLOUDINARY_CLOUD_NAME=your_cloudinary_cloud_name
+CLOUDINARY_API_KEY=your_cloudinary_api_key
+CLOUDINARY_API_SECRET=your_cloudinary_api_secret
+⚠️ Don't expose this file publicly. Add .env.local to .gitignore.
+
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Route                    | Description                                       | Auth Required   |
+| ------------------------ | ------------------------------------------------- | --------------- |
+| `/`                      | Home page with branding or landing content        | ❌ No            |
+| `/login`                 | Login page with Google & credentials auth         | ❌ No            |
+| `/products`              | Displays product catalog                          | ✅ Yes           |
+| `/dashboard/add-product` | Add a new product (with image upload)             | ✅ Yes           |
+| `/api/products`          | API route to fetch all products                   | ✅ Yes (session) |
+| `/api/products/add`      | API route to add a new product with image support | ✅ Yes (session) |
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+📦 Features
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+🔐 Google  login via NextAuth
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+📦 Add & fetch products via MongoDB
 
-## Deploy on Vercel
+☁️ Image upload via Cloudinary
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+⚡ Real-time feedback with react-hot-toast
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-# scicnestjs
+📱 Mobile responsive with Tailwind CSS
+
+📤 Deployable on Vercel
+
+
+🧪 Future Improvements
+
+User-specific product management (edit/delete)
+
+Shopping cart functionality
+
+Payment integration (Stripe or Razorpay)
+
+Pagination / infinite scroll
+
+Admin dashboard
