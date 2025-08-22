@@ -9,9 +9,19 @@ const handler = NextAuth({
     }),
   ],
   callbacks: {
-    async redirect({ url, baseUrl }) {
-      return '/products'; // Redirect to /products after login
+    async jwt({ token, user }) {
+      if (user) {
+        token.id = user.id;
+      }
+      return token;
     },
+    async session({ session, token }) {
+      session.user.id = token.id;
+      return session;
+    },
+  },
+  pages: {
+    signIn: "/login",
   },
 });
 

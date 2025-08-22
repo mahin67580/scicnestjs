@@ -27,7 +27,7 @@ export default function ProductHighlights() {
   return (
     <section className="py-16 bg-gray-50">
       <div className="max-w-7xl mx-auto px-5 text-center">
-        <h2 className="text-3xl md:text-4xl font-bold mb-10">
+        <h2 className="text-3xl md:text-4xl text-black font-bold mb-10">
           Featured Products
         </h2>
 
@@ -43,7 +43,7 @@ export default function ProductHighlights() {
                 className="w-full h-48 object-cover"
               />
               <div className="p-5">
-                <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
+                <h3 className="text-xl font-semibold mb-2 text-black">{item.title}</h3>
                 <p className="text-gray-600 mb-4">{item.description}</p>
                 <Link
                   href="/products"
